@@ -11,10 +11,21 @@
 
 
 
-<ion-content [fullscreen]="true">
-  <form [formGroup]="form">
-    <ion-label position="floating">username</ion-label>
-    <ion-input type="text" formControlName="username" required></ion-input>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="form" (submit)="onSubmit()">
+
+    <ion-item>
+      <ion-label position="floating">username</ion-label>
+      <ion-input type="text" formControlName="username" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">password</ion-label>
+      <ion-input type="password" formControlName="password" required></ion-input>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" class="ion-margin-top" [disabled]="form.invalid">Login</ion-button>
+
 
 
   </form>

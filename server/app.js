@@ -23,6 +23,16 @@ app.post('/register',(req,res)=>{
   res.status(200).send(json);
 });
 
+app.post('/login',(req,res)=>{
+  let json = {
+    status: true,
+    message: 'Login',
+    token: "token token"
+  };
+  console.log(json);
+  res.status(200).send(json);
+});
+
 
 
 io.on('connection', (socket) => {
