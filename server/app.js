@@ -7,6 +7,23 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 require('dotenv').config();
+const cors = require('cors');
+
+
+app.use(cors());
+
+
+
+app.post('/register',(req,res)=>{
+  let json = {
+    status: 'success',
+    message: 'Register'
+  };
+  console.log(json);
+  res.status(200).send(json);
+});
+
+
 
 io.on('connection', (socket) => {
 
