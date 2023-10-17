@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ChatService } from '../chat.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.page.html',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatPage implements OnInit {
 
-  constructor() { }
+  newMessage: string = '';
+  messageList: string[] = [];
 
-  ngOnInit() {
+
+  constructor(
+    private chatService: ChatService
+  ) { }
+
+  ngOnInit(){
+    this.chatService.getNewMessage().subscribe((message: string) => {
+      this.messageList.push(message);
+    })
   }
 
+  sendMessage() {
+    this.chatService.sendMessage(this.newMessage);
+    this.newMessage = '';
+  }
 }

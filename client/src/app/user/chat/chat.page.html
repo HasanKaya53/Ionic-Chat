@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">chat</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <div *ngFor="let message of messageList">
+    <li>
+        {{message}}
+    </li>
+</div>
+
+<input [(ngModel)]="newMessage" (keyup)="$event.keyCode === 13 && sendMessage()" />
+<button (click)="sendMessage()">Send Message</button>
+
+
 </ion-content>
