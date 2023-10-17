@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Select Rooms</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-button routerLink="/create" expand="block">
+    Create Room
+  </ion-button>
+
+
+
+
+ <ion-card color="tertiary" class="" *ngFor="let item of room">
+  <ion-card-header>
+    <ion-card-title>{{item.Name}}</ion-card-title>
+  </ion-card-header>
+  <ion-button expand="full" color="medium" (click)="joinRoom(item.RoomID)" >Join</ion-button>
+  <!-- <ion-card-content> Card Content </ion-card-content> -->
+</ion-card>
+
+</ion-content>

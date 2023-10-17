@@ -33,6 +33,22 @@ app.post('/login',(req,res)=>{
   res.status(200).send(json);
 });
 
+app.post('/rooms',(req,res)=>{
+  let json = [
+    {RoomID: 1, Name: 'Room 1'},
+    {RoomID: 2, Name: 'Room 2'},
+    {RoomID: 3, Name: 'Room 3'},
+    {RoomID: 4, Name: 'Room 4'},
+    {RoomID: 5, Name: 'Room 5'},
+    {RoomID: 6, Name: 'Room 6'},
+
+  ]
+  console.log(json);
+  res.status(200).send(json);
+});
+
+
+
 
 
 io.on('connection', (socket) => {

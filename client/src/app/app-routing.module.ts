@@ -20,9 +20,16 @@ const routes: Routes = [
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'create',
-    loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
+    path: 'homepage',
+    loadChildren: () => import('./user/homepage/homepage.module').then( m => m.HomepagePageModule)
   },
+  {
+    path: 'chat',
+    loadChildren: () => import('./user/chat/chat.module').then( m => m.ChatPageModule)
+  },
+
+
+
 ];
 
 @NgModule({
