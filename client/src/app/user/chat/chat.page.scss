@@ -1,0 +1,85 @@
+.message-container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  overflow-y: scroll;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.message {
+  padding: 5px;
+  margin-bottom: 10px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.user {
+  background-color: #0074e4;
+  color: #fff;
+  align-self: flex-end;
+  border-radius: 15px;
+  margin-left: auto; /* Mesajları soldan biraz uzak yapmak */
+}
+
+.other {
+  background-color: #f0f0f0;
+  align-self: flex-start;
+  border-radius: 15px;
+  margin-right: auto; /* Mesajları soldan biraz uzak yapmak */
+  margin-left: 10px; /* Diğer mesajları soldan daha fazla uzak yapmak */
+  color:black;
+}
+.message > span,b {
+  padding-left: 10px; /* Kullanıcı mesajlarının içeriğini soldan biraz açık bırakmak */
+}
+
+
+.message > b {
+  padding-top: 10px; /* Kullanıcı mesajlarının içeriğini soldan biraz açık bırakmak */
+  word-break : break-all;
+}
+
+
+
+
+
+
+
+/* Footer'ı sabitlemek için stil */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0; /* Footer'ı sayfanın soluna sabitlemek için */
+  width: 100%; /* Footer'ın tam genişlikte olmasını sağlar */
+  background-color: #f0f0f0; /* Footer'ın arka plan rengi */
+  padding: 10px;
+}
+
+/* Mesaj giriş alanı ve gönderme düğmesini stillemek için stil */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#message-input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#send-button {
+  background-color: #0074e4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#send-button:hover {
+  background-color: #0050aa;
+}
+

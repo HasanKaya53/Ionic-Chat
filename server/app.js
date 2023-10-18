@@ -11,6 +11,7 @@ const cors = require('cors');
 
 
 app.use(cors());
+app.use(express.json());
 
 
 
@@ -24,10 +25,12 @@ app.post('/register',(req,res)=>{
 });
 
 app.post('/login',(req,res)=>{
+
   let json = {
     status: true,
     message: 'Login',
-    token: "token token"
+    token: "token token",
+    username: req.body.username
   };
   console.log(json);
   res.status(200).send(json);
@@ -56,7 +59,8 @@ io.on('connection', (socket) => {
 
   console.log('Bir istemci bağlandı.');
   socket.on('mesaj', (data) => {
-    console.log(`İstemciden gelen mesaj: ${data}`);
+    console.log(`İstemciden gelen mesaj: `);
+    console.log(data);
     io.emit('mesaj', data);
   });
 

@@ -29,6 +29,8 @@ export class LoginPage implements OnInit {
     password : new FormControl('', [Validators.required,Validators.minLength(3)])
   });
 
+
+
   async onSubmit(){
     const loading = await this.loadingCtrl.create({message:'Logging in...'});
     await loading.present();
@@ -45,6 +47,7 @@ export class LoginPage implements OnInit {
           await toast.present();
           loading.dismiss();
           this.form.reset();
+          localStorage.setItem('username',response.username);
           this.router.navigateByUrl('/homepage');
         }else{
           const alert = await this.alertCtrl.create({header:'Login Failed',message:'Username or password is incorrect',buttons:['OK']});
