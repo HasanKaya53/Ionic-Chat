@@ -1,6 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/homepage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Chat Room: {{room}}
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 

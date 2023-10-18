@@ -47,7 +47,7 @@ export class LoginPage implements OnInit {
           await toast.present();
           loading.dismiss();
           this.form.reset();
-          localStorage.setItem('username',response.username);
+          sessionStorage.setItem('username',response.username);
           this.router.navigateByUrl('/homepage');
         }else{
           const alert = await this.alertCtrl.create({header:'Login Failed',message:'Username or password is incorrect',buttons:['OK']});

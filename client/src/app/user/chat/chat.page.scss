@@ -1,7 +1,7 @@
 .message-container {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 80%;
   overflow-y: scroll;
   border-radius: 15px;
   margin-bottom: 10px;
@@ -55,6 +55,7 @@
   width: 100%; /* Footer'ın tam genişlikte olmasını sağlar */
   background-color: #f0f0f0; /* Footer'ın arka plan rengi */
   padding: 10px;
+  z-index: 99999; /* Footer'ın içeriğinin diğer içeriklerin üzerinde olmasını sağlar */
 }
 
 /* Mesaj giriş alanı ve gönderme düğmesini stillemek için stil */

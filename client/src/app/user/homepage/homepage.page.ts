@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
 
 import { Router } from '@angular/router';
+import { ChatService } from '../chat.service';
 
 @Component({
   selector: 'app-homepage',
@@ -12,13 +13,15 @@ export class HomepagePage implements OnInit {
 
   constructor(
     private homeservice: HomeService,
-    private rooter: Router
+    private rooter: Router,
+    private chatService: ChatService
   ) { }
 
   room:any = [];
 
   ngOnInit() {
     this.getRooms();
+    localStorage.removeItem('room');
   }
 
 
@@ -30,8 +33,12 @@ export class HomepagePage implements OnInit {
   }
 
   joinRoom(room:number){
-    console.log(room);
-    sessionStorage.setItem('room', room.toString());
+    let currentRoom = "Room"+room.toString();
+
+    this.chatService.joinChatRoom(currentRoom);
+    sessionStorage.setItem('room', currentRoom);
+
+
     this.rooter.navigateByUrl('/chat');
   }
 
